@@ -1,0 +1,36 @@
+.container {
+  background-image: url('@/assets/gamebg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 150px;
+    // height: 150px;
+    // border: 1px solid;
+    // font-size: 26px;
+    // font-weight: 700;
+    border-top: 75px solid #aaa;
+    border-bottom: 75px solid #aaa;
+    border-left: 75px solid #666;
+    border-right: 75px solid #666;
+    background-color: #844e4e;
+  }
+
+  .item.clear {
+    background-color: transparent;
+    border: none;
+  }
+}

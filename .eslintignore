@@ -1,0 +1,14 @@
+/src/typings.d.ts
+/src/components/pro/*
+/public/*
+/dist/*
+/lambda/
+/node_modules/
+/scripts
+/config
+.history
+config
+.umi
+mock
+@ccs-design
+commitlint.config.js

@@ -1,0 +1,57 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.handle{
+  margin-bottom: 20px;
+}
+
+//进场动画
+.fade-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-enter-active,.fade-enter-done  {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s;
+}
+
+
+//出场动画
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-exit-active ,.fade-exit-done{
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s;
+}
+
+
+
+// 首次挂载动画
+.fade-appear {
+  opacity: 0;
+  transform: scale(0)
+}
+
+.fade-appear-active {
+  opacity: 0.6;
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
+.fade-appear-done {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s;
+}
