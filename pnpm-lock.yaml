@@ -8,6 +8,9 @@ dependencies:
   '@ant-design/icons':
     specifier: ^5.2.6
     version: 5.2.6(react-dom@18.2.0)(react@18.2.0)
+  '@ivliu/react-offscreen':
+    specifier: ^1.0.7
+    version: 1.0.7(react@18.2.0)
   ahooks:
     specifier: ^3.7.8
     version: 3.7.8(react@18.2.0)
@@ -1308,6 +1311,15 @@ packages:
   /@istanbuljs/schema@0.1.3:
     resolution: {integrity: sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==}
     engines: {node: '>=8'}
+    dev: false
+
+  /@ivliu/react-offscreen@1.0.7(react@18.2.0):
+    resolution: {integrity: sha512-0V+QiZfAMhcZaRv4/8oMI3cDRtNGJhIbGzErZBDrxsGbzpm5vzSGae2UflLZNqE8w+H8NdRtYQLc7+9/VjAM1Q==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=17'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@jest/schemas@29.6.3:

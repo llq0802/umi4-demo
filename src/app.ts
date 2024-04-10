@@ -11,6 +11,6 @@ export default defineApp({
     console.log('==patchClientRoutes====>');
   },
   onRouteChange(...args) {
-    console.log('==onRouteChange====>', args);
+    console.log('==onRouteChange====>');
   },
 });
