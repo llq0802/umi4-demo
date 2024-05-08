@@ -29,13 +29,10 @@ const Repeater: FC<{
   return <>{children}</>;
 };
 
-export const Offscreen: FC<{
-  mode: 'visible' | 'hidden';
-  children: ReactNode;
-}> = (props) => {
+export default (props: { mode: 'visible' | 'hidden'; children: ReactNode }) => {
   const { mode, children } = props;
   return (
-    <Suspense>
+    <Suspense fallback={null}>
       <Repeater mode={mode}>{children}</Repeater>
     </Suspense>
   );

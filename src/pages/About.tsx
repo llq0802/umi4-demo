@@ -6,20 +6,12 @@ import { usePrevious, useUpdateLayoutEffect } from 'ahooks';
 const About = () => {
   const [open, setOpen] = useState(false);
   const [list, setList] = useState(
-    Mock.mock({
-      'list|5': [
-        {
-          id: '@id',
-          'age|1-99': 20,
-          name: '@cname',
-        },
-      ],
-    }).list,
+    Mock.mock({ 'list|5': [{ id: '@id', 'age|1-99': 20, name: '@cname' }] }).list,
   );
   return (
     <div>
       <h1>About</h1>
-      <Button onClick={() => setOpen(!open)}>点击Count</Button>
+      <Button onClick={() => setOpen(!open)}>点击切换key</Button>
       <Button
         onClick={() =>
           setList(

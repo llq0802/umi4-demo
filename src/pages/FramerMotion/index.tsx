@@ -11,8 +11,8 @@ const FramerMotion = () => {
         width: 100,
         height: 100,
         backgroundColor: 'red',
-        // borderRadius: '20px',
-        margin: `0 auto`,
+        borderRadius: '4px',
+        margin: `100px auto`,
       }}
       // 以下三个属性
       // 是motion组件提供的能力
