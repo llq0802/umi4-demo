@@ -5,6 +5,7 @@ const routes = [
   { path: '/react-transition-group', component: 'ReactTransitionGroup', title: '动画' },
   { path: '/framer-motion', component: 'FramerMotion', title: 'FramerMotion' },
   { path: '/offscreen', component: 'Offscreen', title: 'Offscreen' },
+  { path: '/antdstyle', component: 'AntdStyle', title: 'AntdStyle' },
 ];
 
 export default routes;

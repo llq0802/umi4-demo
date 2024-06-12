@@ -36,10 +36,10 @@ export default function Offscreen() {
     // post Worker message
     worker.postMessage('hello from main thread');
 
-    buttonRef.current.addEventListener('click', () => {
+    buttonRef.current?.addEventListener('click', () => {
       console.log('原始冒泡');
     });
-    buttonRef.current.addEventListener(
+    buttonRef.current?.addEventListener(
       'click',
       () => {
         console.log('原始捕获');
@@ -47,7 +47,7 @@ export default function Offscreen() {
       true,
     );
     return () => {
-      buttonRef.current.removeEventListener('click');
+      buttonRef.current?.removeEventListener('click');
     };
   }, []);
 

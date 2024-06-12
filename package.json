@@ -13,10 +13,11 @@
     "@ivliu/react-offscreen": "^1.0.7",
     "ahooks": "^3.7.8",
     "antd": "^5.16.0",
+    "antd-style": "^3.6.2",
     "classnames": "^2.3.2",
     "echarts": "^5.4.3",
     "framer-motion": "^11.0.13",
-    "lighting-design": "^2.1.31",
+    "lighting-design": "^2.1.32",
     "react-transition-group": "^4.4.5",
     "react-use": "^17.4.0",
     "umi": "^4.1.8"
