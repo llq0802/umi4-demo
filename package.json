@@ -20,6 +20,8 @@
     "lighting-design": "^2.1.32",
     "react-transition-group": "^4.4.5",
     "react-use": "^17.4.0",
+    "typed.js": "^2.1.0",
+    "typeit": "^8.8.3",
     "umi": "^4.1.8"
   },
   "devDependencies": {
