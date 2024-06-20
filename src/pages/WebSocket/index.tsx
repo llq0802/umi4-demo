@@ -1,79 +1,36 @@
 import React, { useRef, useMemo, useState } from 'react';
 import { Button, Input } from 'antd';
-import { useSessionid, useSocket } from './hook';
-
-enum ReadyState {
-  Connecting = 0,
-  Open = 1,
-  Closing = 2,
-  Closed = 3,
-}
-
-const ReadyStateMap = {
-  [ReadyState.Connecting]: '连接中',
-  [ReadyState.Open]: '连接成功',
-  [ReadyState.Closing]: '连接关闭中',
-  [ReadyState.Closed]: '连接已关闭或连接失败',
-};
+import { useSocket } from './hook';
+import { ReadyState, ReadyStateMap, initOpen, startRecordr, stopRecordr } from './utils';
+import { src } from './url';
 
 export default () => {
   const messageHistory = useRef<any[]>([]);
   const [value, setValue] = useState('');
-  const { clientId, sessionId } = useSessionid();
-  const { readyState, sendMessage, latestMessage, disconnect, connect } = useSocket({
-    clientId,
-    sessionId,
-    onOpen(event, instance) {
-      const obj = {
-        commandId: '100001',
-        clientId: clientId,
-        sessionId: sessionId,
-        jsonContent: {
-          clientId: clientId,
-          sessionId: sessionId,
-          digitalHumanId: 'b86863a244e24f18be79502fa685842a',
-          scenarioId: null,
-          customerServiceId: null,
-          clientVideoUrl: 'rtsp://10.128.22.20:5544/49c88a90ad6e4238a663ef948db16f5a',
-          hasVirtualImage: false,
-          clientType: 'AI_ASSISTANT',
-          clientSystemType: 'WINDOWS',
-          videoSize: null,
-          clientName: 'DESKTOP-UVP2VO8-YC',
-          visibility: 'VISIBLE',
-          greeting: 'GREET',
-          staFbxMode: 'BVH',
-          userId: null,
-          serverAddress: '10.128.165.14:8082',
-          deviceType: 'PC',
-          version: null,
-          token: null,
-          dcsCmsIp: null,
-          dcsCmsPort: 0,
-          dcsEssIp: null,
-          dcsEssPort: 0,
-          dcsUserName: null,
-          dcsPasswd: null,
-          dcsDeviceId: null,
-          deviceId: null,
-          osVersion: 'Microsoft Windows NT 6.2.9200.0',
-        },
-      };
-      const msg = JSON.stringify(obj);
-      instance.send(msg);
-      // sendMessage(msg);
-    },
-    onMessage(message) {
-      // console.log('从服务端接受到的消息：',JSON.parse(message?.data);
-    },
-    onError(event, instance) {
-      console.log('WebSocket连接发生错误：', event);
-    },
-  });
+
+  const { clientId, sessionId, readyState, sendMessage, latestMessage, disconnect, connect } =
+    useSocket({
+      clientId,
+      sessionId,
+      onOpen(event, instance) {
+        const msg = initOpen(clientId, sessionId);
+        instance.send(msg);
+      },
+      onMessage(message) {
+        // console.log('从服务端接受到的消息：',JSON.parse(message?.data);
+      },
+      onError(event, instance) {
+        console.log('WebSocket连接发生错误：', event);
+      },
+    });
 
   messageHistory.current = useMemo(() => {
     const msgObj = latestMessage?.data ? JSON.parse(latestMessage?.data) : void 0;
-    console.log('==msgObj====>', msgObj);
+
+    if (msgObj) {
+      console.log('==最新的消息: ====>', msgObj);
+    }
+
     return messageHistory.current.concat(msgObj);
   }, [latestMessage]);
 
@@ -109,8 +66,8 @@ export default () => {
         onClick={() => {
           const msg = {
             commandId: '200001',
-            clientId: clientId,
-            sessionId: sessionId,
+            clientId,
+            sessionId,
             jsonContent: { message: value },
           };
           sendMessage(JSON.stringify(msg));
@@ -121,6 +78,39 @@ export default () => {
       >
         ✉️ send
       </Button>
+
+      <Button
+        onClick={() => {
+          startRecordr();
+        }}
+      >
+        开始录音
+      </Button>
+      <Button
+        onClick={() => {
+          stopRecordr((base64ring) => {
+            console.log('停止录音', base64ring);
+            const obj = {
+              commandId: '200100',
+              clientId,
+              sessionId,
+              jsonContent: {
+                message: base64ring.split(',')[1],
+              },
+            };
+            const audio = document.querySelector('#audio');
+            audio.src = base64ring;
+            // audio?.play?.();
+            sendMessage(JSON.stringify(obj));
+          });
+        }}
+      >
+        停止录音
+      </Button>
+
+      <hr />
+      <audio controls id="audio" src={src}></audio>
+      <hr />
 
       <div style={{ marginTop: 8 }}>
         <p>消息列表: </p>
