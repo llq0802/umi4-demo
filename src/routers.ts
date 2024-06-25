@@ -7,6 +7,7 @@ const routes = [
   { path: '/offscreen', component: 'Offscreen', title: 'Offscreen' },
   { path: '/antdstyle', component: 'AntdStyle', title: 'AntdStyle' },
   { path: 'websocket', component: 'WebSocket', title: 'WebSocket' },
+  { path: 'Axios', component: 'Axios', title: 'Axios' },
 ];
 
 export default routes;
