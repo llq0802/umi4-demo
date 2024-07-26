@@ -56,6 +56,9 @@ importers:
       umi:
         specifier: ^4.1.8
         version: 4.1.8(@babel/core@7.23.9)(@types/node@20.11.16)(@types/react@18.2.15)(eslint@8.45.0)(lightningcss@1.22.1)(prettier@3.2.4)(react-dom@18.1.0(react@18.1.0))(react@18.1.0)(rollup@3.29.4)(stylelint@15.10.2(typescript@5.1.6))(terser@5.27.0)(type-fest@1.4.0)(typescript@5.1.6)(webpack@5.90.1)
+      use-immer:
+        specifier: ^0.10.0
+        version: 0.10.0(immer@10.1.1)(react@18.1.0)
     devDependencies:
       '@types/react':
         specifier: ^18.2.15
@@ -2840,6 +2843,9 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
+  immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
+
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -5034,6 +5040,12 @@ packages:
     resolution: {integrity: sha512-zAavKn83Z6V6wlatpEp+fmbAS6vMA3tISudw04eSeyXc0AZG98JDDK1U+gmMxV/oATcub+ijgrENMPqHue+SiA==}
     peerDependencies:
       react: '>=16.8.0'
+
+  use-immer@0.10.0:
+    resolution: {integrity: sha512-/eVwNR4TG9Tm/dd+aHYLLaI0FLfYKlkTqKMkn78Ah/EYVzWd/zJIgpkdoFEKbhQJOGo8XN7/mWrTx0exp1c+Ug==}
+    peerDependencies:
+      immer: '>=8.0.0'
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
 
   use-isomorphic-layout-effect@1.1.2:
     resolution: {integrity: sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==}
@@ -8634,6 +8646,8 @@ snapshots:
   image-size@0.5.5:
     optional: true
 
+  immer@10.1.1: {}
+
   import-fresh@3.3.0:
     dependencies:
       parent-module: 1.0.1
@@ -11104,6 +11118,11 @@ snapshots:
 
   use-animate-number@1.0.5(react@18.1.0):
     dependencies:
+      react: 18.1.0
+
+  use-immer@0.10.0(immer@10.1.1)(react@18.1.0):
+    dependencies:
+      immer: 10.1.1
       react: 18.1.0
 
   use-isomorphic-layout-effect@1.1.2(@types/react@18.2.15)(react@18.1.0):

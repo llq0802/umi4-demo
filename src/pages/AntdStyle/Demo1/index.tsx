@@ -39,7 +39,8 @@ export default function Index() {
   const { styles, cx, theme } = useStyles({ id: 999 });
   return (
     <>
-      <div className={styles.container}>container</div>;<div className={styles.card}>card</div>;
+      <div className={styles.container}>container</div>
+      <div className={styles.card}>card</div>
     </>
   );
 }
