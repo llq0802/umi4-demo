@@ -2,6 +2,8 @@ import { Button, Flex } from 'antd';
 import React from 'react';
 import request from './request';
 import { useImmer } from 'use-immer';
+import Child1 from './Child1';
+import Child2 from './Child2';
 
 export default function Index() {
   const [todos, setTodos] = useImmer({
@@ -70,9 +72,8 @@ export default function Index() {
         </Button>
       </Flex>
       <hr />
-      {todos?.list.map((item) => {
-        return <div key={item.id}>{item.title}</div>;
-      })}
+      <Child1></Child1>
+      <Child2 todos={todos}></Child2>
     </div>
   );
 }
