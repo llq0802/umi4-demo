@@ -8,6 +8,7 @@ const routes = [
   { path: '/antdstyle', component: 'AntdStyle', title: 'AntdStyle' },
   { path: 'websocket', component: 'WebSocket', title: 'WebSocket' },
   { path: 'Axios', component: 'Axios', title: 'Axios' },
+  { path: 'Antd', component: 'Antd', title: 'Antd' },
 ];
 
 export default routes;

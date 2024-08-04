@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const Child1 = ({ todos }) => {
+const Child2 = ({ todos }) => {
   console.log('== Child2 ====>');
   return (
     <div>
@@ -13,4 +13,4 @@ const Child1 = ({ todos }) => {
   );
 };
 
-export default Child1;
+export default Child2;
