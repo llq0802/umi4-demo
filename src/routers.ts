@@ -9,6 +9,7 @@ const routes = [
   { path: 'websocket', component: 'WebSocket', title: 'WebSocket' },
   { path: 'Axios', component: 'Axios', title: 'Axios' },
   { path: 'Antd', component: 'Antd', title: 'Antd' },
+  { path: 'IconFont', component: 'IconFont', title: 'IconFont' },
 ];
 
 export default routes;

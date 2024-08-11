@@ -1,11 +1,11 @@
-import { Link, Outlet } from 'umi';
+import { NavLink, Outlet } from 'umi';
 import styles from './index.less';
 import routers from '@/routers';
 import { StyleProvider, px2remTransformer } from '@ant-design/cssinjs';
 import { ConfigProvider, theme } from 'antd';
 
 const px2rem = px2remTransformer({
-  rootValue: 14, // 32px = 1rem; @default 16
+  rootValue: 14, // 32px = 1rem; @default 16 不能与cssVar同时启用
 });
 
 export default function Layout() {
@@ -14,10 +14,10 @@ export default function Layout() {
       <ConfigProvider
         theme={{
           cssVar: true,
+          // algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
           token: {
             motion: false,
             //算法
-            algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
             // Seed Token，影响范围大
             colorPrimary: '#00b96b',
             borderRadius: 2,
@@ -31,7 +31,17 @@ export default function Layout() {
             {routers.map((item, i) => {
               return (
                 <li key={i}>
-                  <Link to={item.path}>{item.title}</Link>
+                  <NavLink
+                    to={item.path}
+                    style={({ isActive }) => {
+                      return {
+                        color: isActive ? '#00b96b' : '#000',
+                        fontWeight: isActive ? 'bold' : 'normal',
+                      };
+                    }}
+                  >
+                    {item.title}
+                  </NavLink>
                 </li>
               );
             })}
