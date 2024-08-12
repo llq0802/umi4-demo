@@ -4,4 +4,5 @@ import routes from './src/routers';
 export default defineConfig({
   routes,
   npmClient: 'pnpm',
+  // https: true,
 });

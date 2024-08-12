@@ -1,7 +1,9 @@
 import Recorder from 'recorder-core/recorder.wav.min';
 
-export const BASE_WS_URL = 'ws://136.29.31.111:18888/ycWebSocket';
+// export const BASE_WS_URL = 'ws://136.29.31.111:18888/ycWebSocket';
 // export const BASE_WS_URL = 'wss://136.30.130.132:30118/ycWebSocket';
+// export const BASE_WS_URL = 'wss://136.29.0.0:443/ycWebSocket';
+export const BASE_WS_URL = 'wss://136.29.0.0:7878/ycWebSocket';
 export enum ReadyState {
   Connecting = 0,
   Open = 1,

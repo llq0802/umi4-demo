@@ -112,14 +112,14 @@ export default () => {
       <audio controls id="audio" src={src}></audio>
       <hr />
 
-      <div style={{ marginTop: 8 }}>
+      {/* <div style={{ marginTop: 8 }}>
         <p>消息列表: </p>
-        {/* {messageHistory.current.map((message, index) => (
+        {messageHistory.current.map((message, index) => (
           <p key={index} style={{ wordWrap: 'break-word' }}>
             {message?.data}
           </p>
-        ))} */}
-      </div>
+        ))}
+      </div> */}
     </div>
   );
 };
