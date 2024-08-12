@@ -1,4 +1,5 @@
 import { defineApp } from 'umi';
+
 console.log('app start');
 
 export default defineApp({

@@ -7,6 +7,9 @@ const routes = [
   { path: '/framer-motion', component: 'FramerMotion', title: 'FramerMotion' },
   { path: '/offscreen', component: 'Offscreen', title: 'Offscreen' },
   { path: '/antdstyle', component: 'AntdStyle', title: 'AntdStyle' },
+  { path: 'Axios', component: 'Axios', title: 'Axios' },
+  { path: 'Antd', component: 'Antd', title: 'Antd' },
+  { path: 'IconFont', component: 'IconFont', title: 'IconFont' },
 ];
 
 export default routes;

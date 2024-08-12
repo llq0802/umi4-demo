@@ -4,5 +4,8 @@ import routes from './src/routers';
 export default defineConfig({
   routes,
   npmClient: 'pnpm',
-  // https: true,
+  metas: [
+    { name: 'keywords', content: 'umi, umijs' },
+    { name: 'description', content: 'React framework.' },
+  ],
 });
