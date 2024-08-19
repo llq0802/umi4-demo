@@ -16,7 +16,7 @@ export default function Layout() {
           cssVar: true,
           // algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
           token: {
-            motion: false,
+            // motion: false,
             //算法
             // Seed Token，影响范围大
             colorPrimary: '#00b96b',
